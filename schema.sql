@@ -12,3 +12,10 @@ create table words (
 
 create index words_cefr_idx on words (cefr);
 create index words_order_idx on words ("order");
+
+create table translations (
+  translation_id uuid primary key default gen_random_uuid(),
+  word_id uuid not null references words on delete cascade,
+  translation text not null,
+  source text not null
+);
