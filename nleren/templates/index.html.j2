@@ -1,0 +1,6 @@
+{% if current_user %}
+<p>Signed in as <strong>{{ current_user.name }}</strong>.
+  <a href="{{ url_for('sign_out') }}">Sign out?</a></p>
+{% else %}
+<p>Not signed in. <a href="{{ url_for('sign_in') }}">Sign in?</a></p>
+{% endif %}

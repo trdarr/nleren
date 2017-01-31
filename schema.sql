@@ -19,3 +19,15 @@ create table translations (
   translation text not null,
   source text not null
 );
+
+create table users (
+  user_id uuid primary key default gen_random_uuid(),
+  google_user_id text not null unique,
+  name text not null,
+  email text not null
+);
+
+create table sessions (
+  session_id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references users on delete cascade
+);

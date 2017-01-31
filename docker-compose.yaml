@@ -16,6 +16,14 @@ services:
       - site-packages:/usr/local/lib/python3.6/site-packages
     working_dir: /usr/src/app
 
+  web-dev:
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/src/app
+      - site-packages:/usr/local/lib/python3.6/site-packages
+
 volumes:
   postgres: {}
   site-packages: {}
