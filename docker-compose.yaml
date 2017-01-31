@@ -10,10 +10,10 @@ services:
       - postgres:/var/lib/postgresql/data
 
   python:
-    image: python:3.5
+    image: python:3.6
     volumes:
       - .:/usr/src/app
-      - site-packages:/usr/local/lib/python3.5/site-packages
+      - site-packages:/usr/local/lib/python3.6/site-packages
     working_dir: /usr/src/app
 
 volumes:
